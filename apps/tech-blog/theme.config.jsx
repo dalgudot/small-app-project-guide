@@ -1,8 +1,8 @@
 export default {
-  logo: <strong>Small App Dev Blog</strong>,
+  logo: <strong style={{ fontSize: '17px' }}>Small App Tech Blog</strong>,
 
   project: {
-    icon: null,
+    link: 'https://github.com/dalgudot/small-app-project',
   },
 
   search: {
@@ -27,9 +27,9 @@ export default {
     text: (
       <span>
         {new Date().getFullYear()} ©{' '}
-        {/* <a href='https://nextra.site' target='_blank'> */}
-        KyungHwan Kim
-        {/* </a> */}
+        <a href='https://github.com/dalgudot/small-app-project' target='_blank'>
+          KyungHwan Kim
+        </a>
       </span>
     ),
   },
