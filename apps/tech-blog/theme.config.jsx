@@ -16,17 +16,16 @@ export default {
     toggleButton: true,
   },
 
-  // footer: {
-  //   text: (
-  //     <span>
-  //       {new Date().getFullYear()} ©{' '}
-  //       <a href='https://nextra.site' target='_blank'>
-  //         KyungHwan Kim
-  //       </a>
-  //       .
-  //     </span>
-  //   ),
-  // },
+  footer: {
+    text: (
+      <span>
+        {new Date().getFullYear()} ©{' '}
+        {/* <a href='https://nextra.site' target='_blank'> */}
+        KyungHwan Kim
+        {/* </a> */}
+      </span>
+    ),
+  },
 
   i18n: [
     { locale: 'en', text: 'English' },
