@@ -1,12 +1,19 @@
 export default {
-  logo: <span>My Nextra Documentation</span>,
+  logo: <strong>Small App Dev Blog</strong>,
+
   project: {
-    link: 'https://github.com/shuding/nextra',
+    icon: null,
   },
+
+  search: {
+    placeholder: 'Search',
+  },
+
   editLink: {
-    text: 'Edit!',
-    // component: null,
+    // text: 'Edit!',
+    component: null,
   },
+
   feedback: {
     content: null,
   },
@@ -25,6 +32,10 @@ export default {
         {/* </a> */}
       </span>
     ),
+  },
+
+  toc: {
+    backToTop: true,
   },
 
   i18n: [
