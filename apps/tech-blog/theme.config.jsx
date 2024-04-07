@@ -1,12 +1,19 @@
 export default {
-  logo: <span>My Nextra Documentation</span>,
+  logo: <strong style={{ fontSize: '17px' }}>Small App Tech Blog</strong>,
+
   project: {
-    link: 'https://github.com/shuding/nextra',
+    link: 'https://github.com/dalgudot/small-app-project',
   },
+
+  search: {
+    placeholder: 'Search',
+  },
+
   editLink: {
-    text: 'Edit!',
-    // component: null,
+    // text: 'Edit!',
+    component: null,
   },
+
   feedback: {
     content: null,
   },
@@ -16,17 +23,20 @@ export default {
     toggleButton: true,
   },
 
-  // footer: {
-  //   text: (
-  //     <span>
-  //       {new Date().getFullYear()} ©{' '}
-  //       <a href='https://nextra.site' target='_blank'>
-  //         KyungHwan Kim
-  //       </a>
-  //       .
-  //     </span>
-  //   ),
-  // },
+  footer: {
+    text: (
+      <span>
+        {new Date().getFullYear()} ©{' '}
+        <a href='https://github.com/dalgudot/small-app-project' target='_blank'>
+          KyungHwan Kim
+        </a>
+      </span>
+    ),
+  },
+
+  toc: {
+    backToTop: true,
+  },
 
   i18n: [
     { locale: 'en', text: 'English' },

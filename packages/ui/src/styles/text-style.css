@@ -1,0 +1,21 @@
+/* Font */
+html,
+body {
+  /* Nextra pre 등에 영향 끼치지 않기 위해, html, body에 정의 */
+  font-family: var(--web-font-family);
+}
+
+:root {
+  --web-font-family: 'Pretendard Variable', Apple SD Gothic Neo, Noto Sans KR,
+    Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url('../../public/fonts/PretendardVariable.woff2')
+    format('woff2-variations');
+}
