@@ -10,10 +10,7 @@ const BlogPostListPage = ({
   const posts = getPostMetaData(locale);
 
   const postPreviewForList = posts.map((post) => (
-    <Link
-      key={post.slug}
-      href={`/${locale}/blog/${post.category}/${post.slug}`}
-    >
+    <Link key={post.slug} href={`/${locale}/guide/${post.slug}`}>
       <h1>{post.title}</h1>
     </Link>
   ));

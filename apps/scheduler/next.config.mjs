@@ -20,14 +20,8 @@ const nextConfig = {
 
   transpilePackages: ['@repo/ui'],
 
-  // i18n: {
-  //   locales: ['ko', 'en'],
-  //   defaultLocale: 'ko',
-  // },
-
   // Configure `pageExtensions`` to include MDX files
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
-  // Optionally, add any other Next.js config below
 };
 
 // Merge MDX config with Next.js config
