@@ -1,5 +1,5 @@
 export default {
-  logo: <strong style={{ fontSize: '17px' }}>Small App Tech Blog</strong>,
+  logo: <strong style={{ fontSize: '19px' }}>Small App Tech Blog</strong>,
 
   project: {
     link: 'https://github.com/dalgudot/small-app-project',
@@ -20,8 +20,8 @@ export default {
 
   sidebar: {
     defaultMenuCollapseLevel: 3,
-    autoCollapse: true,
-    toggleButton: true,
+    autoCollapse: false,
+    toggleButton: false,
   },
 
   footer: {
