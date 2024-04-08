@@ -41,8 +41,6 @@ export default {
 
   sidebar: {
     defaultMenuCollapseLevel: 3,
-    autoCollapse: false,
-    toggleButton: false,
   },
 
   footer: {
@@ -54,10 +52,6 @@ export default {
         </a>
       </span>
     ),
-  },
-
-  toc: {
-    backToTop: true,
   },
 
   i18n: [
