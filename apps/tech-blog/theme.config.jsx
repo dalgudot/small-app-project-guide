@@ -1,5 +1,26 @@
+import { useRouter } from 'next/router';
+
 export default {
-  logo: <strong style={{ fontSize: '19px' }}>Small App Tech Blog</strong>,
+  useNextSeoProps() {
+    const { asPath, locale } = useRouter();
+
+    if (asPath !== '/') {
+      return {
+        titleTemplate:
+          locale === 'ko' ? '%s – 작은 앱 프로젝트' : '%s – Small App Project',
+      };
+    }
+  },
+
+  logo: () => {
+    const { locale } = useRouter();
+
+    return (
+      <strong style={{ fontSize: '19px' }}>
+        {locale === 'ko' ? '작은 앱 기술 블로그' : 'Small App Tech Blog'}
+      </strong>
+    );
+  },
 
   project: {
     link: 'https://github.com/dalgudot/small-app-project',
