@@ -11,7 +11,7 @@ export default function Home({
 
   return (
     <main>
-      <h1>{t('Small App Project')} </h1>
+      <h1>{t('Small App Project')}</h1>
       <Link href={`/${locale}/blog`}>Blog</Link>
     </main>
   );
