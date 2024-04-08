@@ -32,7 +32,7 @@ export default function RootLayout({
             <LocaleSwitcher />
 
             {/* 추후 라이트 색상 추가 시 추가 */}
-            <ThemeSelector />
+            {/* <ThemeSelector /> */}
           </nav>
           {children}
         </ThemeProvider>

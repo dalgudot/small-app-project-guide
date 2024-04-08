@@ -4,12 +4,9 @@ import matter from 'gray-matter';
 
 export interface PostMetaData {
   title: string;
-  category: CategoryType;
   date: string;
   slug: string;
 }
-
-export type CategoryType = 'design' | 'dev';
 
 export const getPostMetaData = (locale: Locale): PostMetaData[] => {
   const folder = 'src/posts/';

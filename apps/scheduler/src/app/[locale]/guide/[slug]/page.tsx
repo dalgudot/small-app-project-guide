@@ -31,7 +31,7 @@ const BlogPostPage = ({
   // https://nextjs.org/docs/app/building-your-application/optimizing/lazy-loading
   // ✨ 한, 영으로 모든 콘텐츠를 작성하지 않기 위한 Custom Logic
   const MDXContent = dynamic(
-    () => import(`../../../../../posts/${slug}.${locale}.mdx`)
+    () => import(`../../../../posts/${slug}.${locale}.mdx`)
   );
 
   return (
