@@ -8,8 +8,11 @@ export interface PostMetaData {
   slug: string;
 }
 
-export const getPostMetaData = (locale: Locale): PostMetaData[] => {
-  const folder = 'src/posts/';
+export const getPostMetaData = (
+  locale: Locale,
+  folderPath: string
+): PostMetaData[] => {
+  const folder = `src/posts/${folderPath}/`;
   const files = fs.readdirSync(folder);
   const markdownPosts: string[] = files.filter((file) =>
     file.endsWith(locale === 'ko' ? '.ko.mdx' : '.en.mdx')
