@@ -9,10 +9,11 @@ const GuideListPage = ({
   params: { locale: Locale };
 }>) => {
   const t = useTranslations('Home');
-  const posts = getPostMetaData(locale);
+  const folderPath: string = 'iphone/widget'; // - Dynamic Route: [i]/[category]
+  const posts = getPostMetaData(locale, folderPath);
 
   const postPreviewForList = posts.map((post) => (
-    <Link key={post.slug} href={`/${locale}/${post.slug}`}>
+    <Link key={post.slug} href={`/${locale}/${folderPath}/${post.slug}`}>
       <h1>{post.title}</h1>
     </Link>
   ));
