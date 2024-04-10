@@ -1,3 +1,4 @@
+import { Code } from '@repo/ui/mdx/code';
 import type { MDXComponents } from 'mdx/types';
 import Image, { ImageProps } from 'next/image';
 import { ReactNode } from 'react';
@@ -12,13 +13,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     // Allows customizing built-in components, e.g. to add styling.
     h1: ({ children }) => <H1>{children}</H1>,
     h2: ({ children }) => <h2 style={{ color: 'red' }}>{children}</h2>,
-    code: ({ children }) => (
-      <code
-        style={{ color: 'orange', padding: '40px', backgroundColor: 'gray' }}
-      >
-        {children}
-      </code>
-    ),
+    h3: ({ children }) => <h3 style={{ color: 'blue' }}>{children}</h3>,
+    p: ({ children }) => <p style={{ color: 'gray' }}>{children}</p>,
+    code: ({ children }) => <Code>{children}</Code>,
     // img: (props) => (
     //   <Image
     //     sizes='100vw'
