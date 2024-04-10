@@ -1,14 +1,21 @@
 /* Font */
 html,
 body {
-  /* Nextra pre 등에 영향 끼치지 않기 위해, html, body에 정의 */
   font-family: var(--web-font-family);
+}
+
+code {
+  font-family: var(--font-mono);
 }
 
 :root {
   --web-font-family: 'Pretendard Variable', Apple SD Gothic Neo, Noto Sans KR,
     Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica, Arial, sans-serif;
+
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 }
 
 @font-face {
