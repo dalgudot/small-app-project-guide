@@ -1,20 +1,13 @@
-import { Code } from '@repo/ui/mdx/code';
+import { Code, H1, H2, H3, P } from '@repo/ui/mdx';
 import type { MDXComponents } from 'mdx/types';
 import Image, { ImageProps } from 'next/image';
-import { ReactNode } from 'react';
-
-// This file allows you to provide custom React components
-// to be used in MDX files. You can import and use any
-// React component you want, including inline styles,
-// components from other libraries, and more.
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    // Allows customizing built-in components, e.g. to add styling.
     h1: ({ children }) => <H1>{children}</H1>,
-    h2: ({ children }) => <h2 style={{ color: 'red' }}>{children}</h2>,
-    h3: ({ children }) => <h3 style={{ color: 'blue' }}>{children}</h3>,
-    p: ({ children }) => <p style={{ color: 'gray' }}>{children}</p>,
+    h2: ({ children }) => <H2>{children}</H2>,
+    h3: ({ children }) => <H3>{children}</H3>,
+    p: ({ children }) => <P>{children}</P>,
     code: ({ children }) => <Code>{children}</Code>,
     // img: (props) => (
     //   <Image
@@ -27,6 +20,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   };
 }
 
-function H1({ children }: { children: ReactNode }): JSX.Element {
-  return <h1 style={{ fontSize: '100px' }}>{children}</h1>;
-}
+// https://nextjs.org/docs/app/building-your-application/configuring/mdx
+
+// Allows customizing built-in components, e.g. to add styling.
+
+// This file allows you to provide custom React components
+// to be used in MDX files. You can import and use any
+// React component you want, including inline styles,
+// components from other libraries, and more.
