@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./button": "./src/button.tsx",
-    "./card": "./src/card.tsx",
-    "./mdx/code": "./src/mdx/code.tsx",
-    "./text-styles": "./src/styles/text-style.css",
-    "./new-tab": "./src/new-tab.tsx"
+    "./new-tab": "./src/components/new-tab.tsx",
+    "./button": "./src/components/button.tsx",
+    "./card": "./src/components/card.tsx",
+    "./mdx": "./src/mdx.tsx",
+    "./text-styles": "./src/styles/text-style.css"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
