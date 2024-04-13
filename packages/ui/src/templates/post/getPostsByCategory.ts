@@ -1,4 +1,3 @@
-import { Locale } from '@/i18n';
 import fs from 'fs';
 import matter from 'gray-matter';
 
@@ -14,12 +13,13 @@ export interface Post {
   content: string;
 }
 
-export const getPostsByCategory = (locale: Locale): PostsByCategory[] => {
-  const postSourceFolderRoot = `src/posts/${locale}`;
-  const categoryFolderNames: string[] = fs.readdirSync(postSourceFolderRoot);
+export const getPostsByCategory = (
+  postFolderPath: string
+): PostsByCategory[] => {
+  const categoryFolderNames: string[] = fs.readdirSync(postFolderPath);
 
   const posts: PostsByCategory[] = categoryFolderNames.map((category) => {
-    const postPath = `${postSourceFolderRoot}/${category}`;
+    const postPath = `${postFolderPath}/${category}`;
 
     const markdownPostsFileNames: string[] = fs
       .readdirSync(postPath)
