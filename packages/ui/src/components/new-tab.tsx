@@ -1,4 +1,4 @@
-const NewTab = ({
+export const NewTab = ({
   children,
   href,
 }: {
@@ -11,5 +11,3 @@ const NewTab = ({
     </a>
   );
 };
-
-export default NewTab;

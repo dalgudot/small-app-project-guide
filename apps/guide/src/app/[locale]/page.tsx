@@ -1,7 +1,6 @@
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
 import { Locale } from '@/i18n';
-import { getPostMetaData } from '@/lib/getPostMetaData';
+import { PostListView } from '@repo/ui/templates/post';
 
 const GuideListPage = ({
   params: { locale },
@@ -9,19 +8,11 @@ const GuideListPage = ({
   params: { locale: Locale };
 }>) => {
   const t = useTranslations('Home');
-  const folderPath: string = 'iphone/widget'; // - Dynamic Route: [i]/[category]
-  const posts = getPostMetaData(locale, folderPath);
-
-  const postPreviewForList = posts.map((post) => (
-    <Link key={post.slug} href={`/${locale}/${folderPath}/${post.slug}`}>
-      <h1>{post.title}</h1>
-    </Link>
-  ));
 
   return (
     <main>
       <h1>{t('Small App Project')}</h1>
-      {postPreviewForList}
+      <PostListView locale={locale} />
     </main>
   );
 };

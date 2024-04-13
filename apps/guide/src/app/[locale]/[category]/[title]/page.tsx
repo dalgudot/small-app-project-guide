@@ -1,5 +1,4 @@
 import { Locale } from '@/i18n';
-import { getPostMetaData } from '@/lib/getPostMetaData';
 import dynamic from 'next/dynamic';
 
 // Dynamic Routes
@@ -7,15 +6,15 @@ import dynamic from 'next/dynamic';
 const PostPage = ({
   params,
 }: {
-  params: { i: string; category: string; slug: string; locale: Locale };
+  params: { locale: Locale; category: string; title: string };
 }) => {
-  const { i, category, slug, locale } = params;
+  const { locale, category, title } = params;
 
   // MDX 활용 위한 Dynamic import
   // https://nextjs.org/docs/app/building-your-application/optimizing/lazy-loading
   // ✨ 한, 영으로 모든 콘텐츠를 작성하지 않기 위한 Custom Logic
   const MDXContent = dynamic(
-    () => import(`../../../../../posts/${i}/${category}/${slug}.${locale}.mdx`)
+    () => import(`../../../../posts/${locale}/${category}/${title}.mdx`)
   );
 
   return (
@@ -38,7 +37,7 @@ export default PostPage;
 // }: Readonly<{
 //   params: { locale: Locale };
 // }>) => {
-//   const posts = getPostMetaData(locale);
+//   const posts = getPostsByCategory(locale);
 
 //   return posts.map((post) => ({
 //     slug: post.slug,
