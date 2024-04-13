@@ -9,16 +9,12 @@ const GuideListPage = ({
   params: { locale: Locale };
 }>) => {
   const t = useTranslations('Home');
-  // const folderPath: string = 'widget'; // - Dynamic Route: [i]/[category]
-
-  console.log('동작');
   const postsByCategory = getPostsByCategory(locale);
 
   const postListByCategory = postsByCategory.map((postByCategory) => {
     const category: string = postByCategory.category;
     const posts: Post[] = postByCategory.posts;
 
-    console.log(posts);
     // Category 폴더만 만들어 놓은 경우 방지
     if (posts.length !== 0) {
       return (

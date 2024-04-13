@@ -14,14 +14,9 @@ export interface Post {
   content: string;
 }
 
-// Category 폴더가 추가돼도 ?
 export const getPostsByCategory = (locale: Locale): PostsByCategory[] => {
-  console.log('locale', locale);
-
   const postSourceFolderRoot = `src/posts/${locale}`;
   const categoryFolderNames: string[] = fs.readdirSync(postSourceFolderRoot);
-
-  console.log('categoryFolderNames', categoryFolderNames);
 
   const posts: PostsByCategory[] = categoryFolderNames.map((category) => {
     const postPath = `${postSourceFolderRoot}/${category}`;
