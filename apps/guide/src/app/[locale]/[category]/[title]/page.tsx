@@ -6,18 +6,15 @@ import dynamic from 'next/dynamic';
 const PostPage = ({
   params,
 }: {
-  params: { locale: Locale; product: string; category: string; title: string };
+  params: { locale: Locale; category: string; title: string };
 }) => {
-  const { locale, product, category, title } = params;
+  const { locale, category, title } = params;
 
   // MDX 활용 위한 Dynamic import
   // https://nextjs.org/docs/app/building-your-application/optimizing/lazy-loading
   // ✨ 한, 영으로 모든 콘텐츠를 작성하지 않기 위한 Custom Logic
   const MDXContent = dynamic(
-    () =>
-      import(
-        `../../../../../posts/${product}/${category}/${title}.${locale}.mdx`
-      )
+    () => import(`../../../../posts/${category}/${title}.${locale}.mdx`)
   );
 
   return (
