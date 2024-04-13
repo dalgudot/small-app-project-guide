@@ -10,7 +10,7 @@ interface PostsByCategory {
 export interface Post {
   title: string;
   date: string;
-  path: string;
+  pathName: string;
   content: string;
 }
 
@@ -31,7 +31,7 @@ export const getPostsByCategory = (locale: Locale): PostsByCategory[] => {
       const post: Post = {
         title: matterResult.data.title as string,
         date: matterResult.data.date as string,
-        path: name.replace('.mdx', ''),
+        pathName: name.replace('.mdx', ''),
         content: matterResult.content,
       };
 

@@ -27,11 +27,15 @@ const GuideListPage = ({
   });
 
   function postList(category: string, posts: Post[]) {
-    return posts.map((post) => (
-      <Link key={post.path} href={`/${locale}/${category}/${post.path}`}>
-        <h2>{post.title}</h2>
-      </Link>
-    ));
+    return posts.map((post) => {
+      const pathName = post.pathName;
+
+      return (
+        <Link key={pathName} href={`/${locale}/${category}/${pathName}`}>
+          <h2>{post.title}</h2>
+        </Link>
+      );
+    });
   }
 
   return (
