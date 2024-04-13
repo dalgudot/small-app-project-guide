@@ -11,7 +11,7 @@ const GuideListPage = ({
   const t = useTranslations('Home');
   const postsByCategory = getPostsByCategory(locale);
 
-  const postListByCategory = postsByCategory.map((postByCategory) => {
+  const postListViewByCategory = postsByCategory.map((postByCategory) => {
     const category: string = postByCategory.category;
     const posts: Post[] = postByCategory.posts;
 
@@ -41,7 +41,7 @@ const GuideListPage = ({
   return (
     <main>
       <h1>{t('Small App Project')}</h1>
-      {postListByCategory}
+      {postListViewByCategory}
     </main>
   );
 };
