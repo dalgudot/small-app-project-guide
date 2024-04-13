@@ -15,6 +15,12 @@ a {
   text-decoration: none;
 }
 
+ul,
+li,
+ol {
+  list-style: none;
+}
+
 /* Theme */
 /* :root {
   --background: white;
