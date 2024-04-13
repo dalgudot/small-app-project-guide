@@ -1,4 +1,5 @@
 import '@repo/ui/text-styles';
+import '@repo/ui/globals';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
 import type { Metadata } from 'next';
 import Link from 'next/link';

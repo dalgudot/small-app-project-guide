@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { Locale } from '@/i18n';
-import { getPostMetaData } from '@/lib/getPostMetaData';
+import { Post, getPostsByCategory } from '@/lib/getPostsByCategory';
 
 const GuideListPage = ({
   params: { locale },
@@ -9,19 +9,39 @@ const GuideListPage = ({
   params: { locale: Locale };
 }>) => {
   const t = useTranslations('Home');
-  const folderPath: string = 'widget'; // - Dynamic Route: [i]/[category]
-  const posts = getPostMetaData(locale, folderPath);
+  // const folderPath: string = 'widget'; // - Dynamic Route: [i]/[category]
 
-  const postPreviewForList = posts.map((post) => (
-    <Link key={post.slug} href={`/${locale}/${folderPath}/${post.slug}`}>
-      <h1>{post.title}</h1>
-    </Link>
-  ));
+  console.log('동작');
+  const postsByCategory = getPostsByCategory(locale);
+
+  const postListByCategory = postsByCategory.map((postByCategory) => {
+    const category: string = postByCategory.category;
+    const posts: Post[] = postByCategory.posts;
+
+    console.log(posts);
+    // Category 폴더만 만들어 놓은 경우 방지
+    if (posts.length !== 0) {
+      return (
+        <li key={category}>
+          <h1>{category}</h1>
+          {postList(category, posts)}
+        </li>
+      );
+    }
+  });
+
+  function postList(category: string, posts: Post[]) {
+    return posts.map((post) => (
+      <Link key={post.path} href={`/${locale}/${category}/${post.path}`}>
+        <h2>{post.title}</h2>
+      </Link>
+    ));
+  }
 
   return (
     <main>
       <h1>{t('Small App Project')}</h1>
-      {postPreviewForList}
+      {postListByCategory}
     </main>
   );
 };

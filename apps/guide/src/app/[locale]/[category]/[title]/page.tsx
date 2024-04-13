@@ -14,7 +14,7 @@ const PostPage = ({
   // https://nextjs.org/docs/app/building-your-application/optimizing/lazy-loading
   // ✨ 한, 영으로 모든 콘텐츠를 작성하지 않기 위한 Custom Logic
   const MDXContent = dynamic(
-    () => import(`../../../../posts/${category}/${title}.${locale}.mdx`)
+    () => import(`../../../../posts/${locale}/${category}/${title}.mdx`)
   );
 
   return (
@@ -37,7 +37,7 @@ export default PostPage;
 // }: Readonly<{
 //   params: { locale: Locale };
 // }>) => {
-//   const posts = getPostMetaData(locale);
+//   const posts = getPostsByCategory(locale);
 
 //   return posts.map((post) => ({
 //     slug: post.slug,
