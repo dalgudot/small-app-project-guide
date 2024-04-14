@@ -3,11 +3,11 @@ import dynamic from 'next/dynamic';
 
 // Dynamic Routes
 // https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes
-const PostPage = ({
+export default function PostPage({
   params,
 }: {
   params: { locale: Locale; category: string; title: string };
-}) => {
+}) {
   const { locale, category, title } = params;
 
   // MDX 활용 위한 Dynamic import
@@ -17,17 +17,8 @@ const PostPage = ({
     () => import(`../../../../posts/${locale}/${category}/${title}.mdx`)
   );
 
-  return (
-    // ✨ main 및 article 태그는 layout에서 넣어도 될 듯!
-    <main>
-      <article>
-        <MDXContent />
-      </article>
-    </main>
-  );
-};
-
-export default PostPage;
+  return <MDXContent />;
+}
 
 // ✨ SSG - next-intl이 아직 지원하지 않음. - Production /${locale}/blog 에서 500 에러 발생
 // ```pnpm build``` 로 확인 가능
@@ -37,7 +28,7 @@ export default PostPage;
 // }: Readonly<{
 //   params: { locale: Locale };
 // }>) => {
-//   const posts = getPostsByCategory(locale);
+//   const posts = getPostListData(locale);
 
 //   return posts.map((post) => ({
 //     slug: post.slug,
