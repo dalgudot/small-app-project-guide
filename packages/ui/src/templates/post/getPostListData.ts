@@ -12,7 +12,7 @@ export interface PostListItem {
   pathName: string;
 }
 
-export const getPostListData = (postFolderPath: string): PostListData[] => {
+export function getPostListData(postFolderPath: string): PostListData[] {
   const categoryFolderNames: string[] = fs.readdirSync(postFolderPath);
 
   const postListData: PostListData[] = categoryFolderNames.map((category) => {
@@ -44,4 +44,4 @@ export const getPostListData = (postFolderPath: string): PostListData[] => {
   });
 
   return postListData;
-};
+}

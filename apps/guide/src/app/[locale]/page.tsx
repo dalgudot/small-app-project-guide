@@ -2,11 +2,11 @@ import { useTranslations } from 'next-intl';
 import { Locale } from '@/i18n';
 import { PostListView } from '@repo/ui/templates/post';
 
-const GuideListPage = ({
+export default function GuideListPage({
   params: { locale },
 }: Readonly<{
   params: { locale: Locale };
-}>) => {
+}>) {
   const t = useTranslations('Home');
 
   return (
@@ -15,6 +15,4 @@ const GuideListPage = ({
       <PostListView locale={locale} />
     </main>
   );
-};
-
-export default GuideListPage;
+}

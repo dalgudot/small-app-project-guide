@@ -5,7 +5,7 @@ interface Props {
   locale: string;
 }
 
-export const PostListView = ({ locale }: Props) => {
+export function PostListView({ locale }: Props) {
   const PostListData = getPostListData(`src/posts/${locale}`);
 
   return (
@@ -30,9 +30,9 @@ export const PostListView = ({ locale }: Props) => {
       })}
     </>
   );
-};
+}
 
-const PostListItemView = ({
+function PostListItemView({
   locale,
   category,
   postListItems,
@@ -40,7 +40,7 @@ const PostListItemView = ({
   locale: string;
   category: string;
   postListItems: PostListItem[];
-}) => {
+}) {
   return postListItems.map((item) => {
     const pathName = item.pathName;
 
@@ -50,4 +50,4 @@ const PostListItemView = ({
       </Link>
     );
   });
-};
+}
