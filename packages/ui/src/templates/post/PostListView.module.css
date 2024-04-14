@@ -1,0 +1,26 @@
+.list__ul {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.list__li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list__li span {
+  color: gray;
+}
+
+.item__ul {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.item__title {
+  font-size: 27px;
+  font-weight: 600;
+}

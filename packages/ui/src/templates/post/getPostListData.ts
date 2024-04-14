@@ -1,7 +1,7 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 
-interface PostListData {
+export interface PostListData {
   category: string;
   postListItems: PostListItem[];
 }

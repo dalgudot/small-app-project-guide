@@ -17,8 +17,8 @@ export default function RootLayout({
       <body>
         <NextThemeProvider>
           <nav>
-            <Link href={`/${locale}`}>Home</Link>
-            <LocaleSwitcher />
+            {/* <Link href={`/${locale}`}>Home</Link> */}
+            {/* <LocaleSwitcher /> */}
 
             {/* 추후 라이트 색상 추가 시 추가 */}
             {/* <ThemeSelector /> */}

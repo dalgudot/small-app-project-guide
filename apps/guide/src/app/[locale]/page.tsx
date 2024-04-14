@@ -3,6 +3,7 @@ import { Locale, locales } from '@/i18n';
 import { PostListView } from '@repo/ui/templates/post';
 import { unstable_setRequestLocale } from 'next-intl/server';
 import { Metadata } from 'next';
+import s from './page.module.css';
 
 interface Params {
   locale: Locale;
@@ -32,7 +33,27 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   return {
     title: smallAppGuide,
     description: desc,
-    keywords: ['KyungHwan Kim', 'Small App Project'],
+    keywords:
+      locale === 'ko'
+        ? [
+            '작은 앱 프로젝트',
+            '스케줄러',
+            '캘린더',
+            '달력',
+            '앱',
+            '어플',
+            '리마인더',
+            '미리 알림',
+          ]
+        : [
+            'Small App Project',
+            'scheduler',
+            'calendar',
+            'app',
+            'application',
+            'reminder',
+            'reminders',
+          ],
 
     // S of Basic Fields
     generator: myName,
@@ -48,11 +69,11 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
     },
     // E of Basic Fields
 
-    metadataBase: new URL('https://guide.dalgu.app/en'),
+    metadataBase: new URL(`https://guide.dalgu.app/${locale}`),
 
     // alternates
     alternates: {
-      canonical: '/en',
+      canonical: `/${locale}`,
       languages: {
         en: '/en',
         ko: '/ko',
@@ -78,7 +99,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
           alt: 'My custom alt',
         },
       ],
-      locale: 'en',
+      locale: locale,
       type: 'website',
     },
 
@@ -126,8 +147,8 @@ export default function GuideListPage({
   const t = useTranslations('Home');
 
   return (
-    <main>
-      <h1>{t('Small App Project')}</h1>
+    <main className={s.main}>
+      {/* <h1>{t('Small App Project')}</h1> */}
       <PostListView locale={locale} />
     </main>
   );
