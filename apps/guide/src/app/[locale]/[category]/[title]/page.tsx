@@ -1,6 +1,22 @@
 import { Locale, locales } from '@/i18n';
 import dynamic from 'next/dynamic';
 import fs from 'fs';
+import { getFrontMatterMetaData } from '@repo/ui/templates/post';
+
+// 포스트별로 동적으로 MetaData 생성
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string; category: string; title: string };
+}) {
+  const { locale, category, title } = params;
+  const meta = getFrontMatterMetaData(locale, category, title);
+
+  return {
+    title: meta.title,
+    description: meta.description,
+  };
+}
 
 interface Params {
   locale: Locale;
@@ -32,8 +48,6 @@ export async function generateStaticParams() {
       });
     });
   });
-
-  // console.log('params', params);
 
   return paramsArr;
 }

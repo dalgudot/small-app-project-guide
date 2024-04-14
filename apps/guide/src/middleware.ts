@@ -9,7 +9,7 @@ export default createMiddleware({
   locales: locales,
 
   // Used when no locale matches
-  defaultLocale: 'ko',
+  defaultLocale: 'en',
 
   // ✨ 이런저런 이유로 'ko와 en'이라는 접두사를 언제나 쓰는 게 좋을 듯!
   // Don't use a locale prefix for the default locale

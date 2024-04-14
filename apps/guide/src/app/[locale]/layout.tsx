@@ -5,19 +5,6 @@ import Link from 'next/link';
 import ThemeSelector from '@/components/ThemeSelector';
 import NextThemeProvider from '@/lib/NextThemeProviders';
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: string };
-}) {
-  const locale = params.locale;
-
-  return {
-    title: locale == 'ko' ? '작은 앱 가이드' : 'Small App Guide',
-    description: '',
-  };
-}
-
 export default function RootLayout({
   children,
   params: { locale },
