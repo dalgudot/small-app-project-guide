@@ -42,9 +42,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-// ✨ [2024.4.2 기준] next-intl에서 아직 SSG를 지원하지 않음 -> 지원하면 SSG로 변환
-// ```pnpm build``` 실패, 즉 production build 실패
-// export async function generateStaticParams() {
-//   return [{ locale: 'ko' }, { locale: 'en' }];
-// }

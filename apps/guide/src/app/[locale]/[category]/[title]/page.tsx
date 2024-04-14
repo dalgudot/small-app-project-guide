@@ -1,6 +1,25 @@
 import { Locale } from '@/i18n';
 import dynamic from 'next/dynamic';
 
+// ✨ SSG - 모든 파일 주소 미리 받아와 각 MDXContent를 모두 가져와야 SSG 가능!
+// ```pnpm build``` 로 확인 가능
+// https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes#generating-static-params
+// export const generateStaticParams = async ({
+//   params,
+// }: Readonly<{
+//   params: { locale: Locale; category: string; title: string };
+// }>) => {
+//   const { locale, category, title } = params;
+
+//   return params;
+
+// const posts = getPostListData(locale);
+
+// return posts.map((post) => ({
+//   slug: post.slug,
+// }));
+// };
+
 // Dynamic Routes
 // https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes
 export default function PostPage({
@@ -19,18 +38,3 @@ export default function PostPage({
 
   return <MDXContent />;
 }
-
-// ✨ SSG - next-intl이 아직 지원하지 않음. - Production /${locale}/blog 에서 500 에러 발생
-// ```pnpm build``` 로 확인 가능
-// https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes#generating-static-params
-// export const generateStaticParams = async ({
-//   params: { locale },
-// }: Readonly<{
-//   params: { locale: Locale };
-// }>) => {
-//   const posts = getPostListData(locale);
-
-//   return posts.map((post) => ({
-//     slug: post.slug,
-//   }));
-// };
