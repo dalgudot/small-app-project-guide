@@ -1,16 +1,17 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 
-interface MatterMetaData {
+// https://nextjs.org/docs/app/building-your-application/configuring/mdx#frontmatter
+interface FrontMatterMetaData {
   title: string;
   description: string;
 }
 
-export function getMatterMetaData(
+export function getFrontMatterMetaData(
   locale: string,
   category: string,
   title: string
-): MatterMetaData {
+): FrontMatterMetaData {
   const fileContent = fs.readFileSync(
     `src/posts/${locale}/${category}/${title}.meta.mdx`,
     'utf8'
