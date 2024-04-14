@@ -2,14 +2,14 @@ import { Locale, locales } from '@/i18n';
 import dynamic from 'next/dynamic';
 import fs from 'fs';
 
-interface Param {
+interface Params {
   locale: Locale;
   category: string;
   title: string;
 }
 
 export async function generateStaticParams() {
-  let params: Param[] = [];
+  let paramsArr: Params[] = [];
 
   // ✨ 한, 영으로 모든 콘텐츠를 작성하지 않으면서 SSG
   locales.forEach((locale) => {
@@ -21,29 +21,25 @@ export async function generateStaticParams() {
         .filter((file) => file.endsWith('.meta.mdx'));
 
       files.forEach((file) => {
-        const param: Param = {
+        const params: Params = {
           locale: locale,
           category: category,
           title: file.replace('.meta.mdx', ''),
         };
 
-        params.push(param);
+        paramsArr.push(params);
       });
     });
   });
 
   // console.log('params', params);
 
-  return params;
+  return paramsArr;
 }
 
 // Dynamic Routes
 // https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes
-export default function PostPage({
-  params,
-}: {
-  params: { locale: Locale; category: string; title: string };
-}) {
+export default function PostPage({ params }: { params: Params }) {
   const { locale, category, title } = params;
 
   // MDX 활용 위한 Dynamic import
