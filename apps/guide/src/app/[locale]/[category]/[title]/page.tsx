@@ -8,6 +8,7 @@ interface Params {
   title: string;
 }
 
+// https://nextjs.org/docs/app/api-reference/functions/generate-static-params#multiple-dynamic-segments
 export async function generateStaticParams() {
   let paramsArr: Params[] = [];
 
