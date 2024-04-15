@@ -1,14 +1,14 @@
 .main {
   display: flex;
   justify-content: center;
-  padding: 96px 0 196px;
+  padding: 96px 0 480px;
   min-height: 100dvh;
   background-color: var(--bw);
 }
 
 @media screen and (max-width: 768px) {
   .main {
-    padding: 36px 16px 196px;
+    padding: 36px 16px 320px;
   }
 }
 
@@ -17,5 +17,5 @@
 }
 
 .article h1 {
-  margin-bottom: 48px;
+  margin-bottom: 12px;
 }

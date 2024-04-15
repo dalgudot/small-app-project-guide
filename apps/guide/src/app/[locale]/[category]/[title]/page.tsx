@@ -33,6 +33,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   const date = meta.date;
   const myName = locale === 'ko' ? '김경환' : 'KyungHwan Kim';
 
+  // https://guide.dalgu.app/ <-- Base URL 있어야 링크 공유 시 image 작동
   const thumbnail = `https://guide.dalgu.app/images/${locale}/${category}/${title}/thumbnail.jpg`;
 
   const url = `https://guide.dalgu.app/${locale}/${category}/${title}`;
@@ -45,6 +46,30 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   return {
     title: metaTitle,
     description: desc,
+    keywords:
+      locale === 'ko'
+        ? [
+            '작은 앱 프로젝트',
+            '스케줄러',
+            '캘린더',
+            '달력',
+            '앱',
+            '어플',
+            '리마인더',
+            '미리 알림',
+            '미리알림',
+            '아이폰',
+          ]
+        : [
+            'Small App Project',
+            'scheduler',
+            'calendar',
+            'app',
+            'application',
+            'reminder',
+            'reminders',
+            'iphone',
+          ],
 
     openGraph: {
       title: metaTitle,
@@ -55,6 +80,16 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
       images: thumbnail,
       locale: locale,
       type: 'article',
+    },
+
+    twitter: {
+      card: 'summary_large_image',
+      title: metaTitle,
+      description: desc,
+      // siteId: '1467726470533754880',
+      creator: '@SmallAppProject',
+      // creatorId: '1467726470533754880',
+      images: thumbnail, // Must be an absolute URL
     },
 
     appLinks: {

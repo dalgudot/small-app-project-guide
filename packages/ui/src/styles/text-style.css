@@ -13,7 +13,9 @@ code {
   --t34: 34px;
   --t28: 28px;
   --t19: 19px;
+  --t18: 18px;
   --t17: 17px;
+  --t16: 16px;
   --t14: 14px;
 }
 
@@ -33,8 +35,16 @@ code {
   font-size: var(--19);
 }
 
+.text__18 {
+  font-size: var(--18);
+}
+
 .text__17 {
   font-size: var(--17);
+}
+
+.text__16 {
+  font-size: var(--16);
 }
 
 .text__14 {
