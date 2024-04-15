@@ -11,6 +11,7 @@ export function PostListView({ title, locale }: Props) {
 
   return (
     <ul className={s.list__ul}>
+      {/* GNB가 생기면 h2는 사라져야 함. */}
       <h2>{title}</h2>
       {PostListDatas.map((postByCategory) => {
         const category: string = postByCategory.category;
@@ -20,6 +21,7 @@ export function PostListView({ title, locale }: Props) {
         if (postListItems.length !== 0) {
           return (
             <PostListItemView
+              key={category}
               locale={locale}
               category={category}
               postListItems={postListItems}
@@ -44,8 +46,8 @@ function PostListItemView({
     const pathName = item.pathName;
 
     return (
-      <li key={pathName} className={s.list__li}>
-        <Link href={`/${locale}/${category}/${pathName}`}>
+      <li key={pathName}>
+        <Link href={`/${locale}/${category}/${pathName}`} className={s.list__a}>
           <h1>{item.title}</h1>
           <p>{item.description}</p>
         </Link>

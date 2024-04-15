@@ -1,3 +1,4 @@
+/* PostListView */
 .list__ul {
   display: flex;
   flex-direction: column;
@@ -11,14 +12,40 @@
   margin-bottom: 24px;
 }
 
-.list__li h1 {
+@media screen and (max-width: 768px) {
+  .list__ul {
+    min-width: 0;
+    max-width: 480px;
+  }
+}
+
+/* PostListItemView */
+.list__a {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 32px;
+  transform: translateX(-32px);
+  border-radius: 12px;
+}
+
+@media (hover: hover) {
+  .list__a:hover {
+    background-color: var(--g8);
+  }
+}
+
+.list__a:active {
+  background-color: var(--g7);
+}
+
+.list__a h1 {
   font-size: var(--t28);
   font-weight: 600;
 }
 
-.list__li p {
+.list__a p {
   font-size: var(--t17);
   color: var(--g2);
   font-weight: 400;
-  margin-top: 8px;
 }

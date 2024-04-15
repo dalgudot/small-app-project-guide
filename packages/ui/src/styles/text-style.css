@@ -42,13 +42,6 @@ code {
 }
 
 :root {
-  --w400: 400;
-  --w500: 500;
-  --w600: 600;
-  --w700: 700;
-}
-
-:root {
   --web-font-family: 'Pretendard Variable', Apple SD Gothic Neo, system-ui,
     -apple-system, Inter, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial,
     sans-serif;
