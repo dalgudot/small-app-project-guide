@@ -11,13 +11,14 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     blockquote: ({ children }) => <BlockQuote>{children}</BlockQuote>,
     code: ({ children }) => <Code>{children}</Code>,
     hr: ({ children }) => <HR>{children}</HR>,
-    // img: (props) => (
-    //   <Image
-    //     sizes='100vw'
-    //     style={{ width: '100%', height: 'auto' }}
-    //     {...(props as ImageProps)}
-    //   />
-    // ),
+    img: (props) => (
+      <Image
+        width={320}
+        height={320}
+        style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+        {...(props as ImageProps)}
+      />
+    ),
     ...components,
   };
 }
