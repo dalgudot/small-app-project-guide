@@ -15,6 +15,7 @@ a {
   text-decoration: none;
   cursor: pointer;
   display: inline-block;
+  -webkit-tap-highlight-color: transparent;
 }
 
 ul,

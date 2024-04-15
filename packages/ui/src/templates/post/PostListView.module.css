@@ -2,14 +2,13 @@
 .list__ul {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 36px;
   min-width: 600px;
-  margin: 0 3.5vw;
+  max-width: 600px;
 }
 
 .list__ul h2 {
   font-size: var(--t42);
-  margin-bottom: 24px;
 }
 
 @media screen and (max-width: 768px) {
@@ -23,10 +22,21 @@
 .list__a {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   padding: 32px;
   transform: translateX(-32px);
   border-radius: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .list__ul h2 {
+    padding: 3.5vw;
+  }
+
+  .list__a {
+    padding: 3.5vw;
+    transform: none;
+  }
 }
 
 @media (hover: hover) {
@@ -44,8 +54,15 @@
   font-weight: 600;
 }
 
-.list__a p {
+.list__a time {
   font-size: var(--t17);
+  color: var(--g4);
+}
+
+.list__a p {
+  font-size: var(--t19);
   color: var(--g2);
   font-weight: 400;
+  margin-top: 12px;
+  line-height: 1.4;
 }

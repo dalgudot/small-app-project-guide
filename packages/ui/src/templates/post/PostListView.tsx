@@ -43,13 +43,17 @@ function PostListItemView({
   postListItems: PostListItem[];
 }) {
   return postListItems.map((item) => {
-    const pathName = item.pathName;
+    const { title, description, date, pathName } = item;
+
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString
+    const localizedDate: string = new Date(date).toLocaleDateString();
 
     return (
       <li key={pathName}>
         <Link href={`/${locale}/${category}/${pathName}`} className={s.list__a}>
-          <h1>{item.title}</h1>
-          <p>{item.description}</p>
+          <h1>{title}</h1>
+          <time dateTime={date}>{localizedDate}</time>
+          <p>{description}</p>
         </Link>
       </li>
     );
