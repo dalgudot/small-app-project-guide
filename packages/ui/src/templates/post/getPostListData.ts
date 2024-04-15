@@ -8,6 +8,7 @@ export interface PostListData {
 
 export interface PostListItem {
   title: string;
+  description: string;
   date: string;
   pathName: string;
 }
@@ -30,6 +31,7 @@ export function getPostListData(postFolderPath: string): PostListData[] {
       // content는 @next/mdx에 의존
       const postListItem: PostListItem = {
         title: meta.title,
+        description: meta.description,
         date: meta.date,
         pathName: name.replace('.meta.mdx', ''),
       };

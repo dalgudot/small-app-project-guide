@@ -7,7 +7,8 @@
     "./mdx": "./src/mdx.tsx",
     "./templates/post": "./src/templates/post/index.ts",
     "./text-styles": "./src/styles/text-style.css",
-    "./globals": "./src/styles/globals.css"
+    "./globals": "./src/styles/globals.css",
+    "./colors": "./src/styles/colors.css"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -26,6 +27,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "classnames": "^2.5.1",
     "gray-matter": "^4.0.3",
     "next": "14.1.4"
   }

@@ -9,6 +9,46 @@ code {
 }
 
 :root {
+  --t42: 42px;
+  --t34: 34px;
+  --t28: 28px;
+  --t19: 19px;
+  --t17: 17px;
+  --t14: 14px;
+}
+
+.text__42 {
+  font-size: var(--42);
+}
+
+.text__34 {
+  font-size: var(--34);
+}
+
+.text__28 {
+  font-size: var(--28);
+}
+
+.text__19 {
+  font-size: var(--19);
+}
+
+.text__17 {
+  font-size: var(--17);
+}
+
+.text__14 {
+  font-size: var(--14);
+}
+
+:root {
+  --w400: 400;
+  --w500: 500;
+  --w600: 600;
+  --w700: 700;
+}
+
+:root {
   --web-font-family: 'Pretendard Variable', Apple SD Gothic Neo, system-ui,
     -apple-system, Inter, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial,
     sans-serif;

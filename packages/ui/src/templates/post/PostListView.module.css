@@ -2,25 +2,23 @@
   display: flex;
   flex-direction: column;
   gap: 48px;
+  min-width: 600px;
+  margin: 0 3.5vw;
 }
 
-.list__li {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.list__ul h2 {
+  font-size: var(--t42);
+  margin-bottom: 24px;
 }
 
-.list__li span {
-  color: gray;
-}
-
-.item__ul {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.item__title {
-  font-size: 27px;
+.list__li h1 {
+  font-size: var(--t28);
   font-weight: 600;
+}
+
+.list__li p {
+  font-size: var(--t17);
+  color: var(--g2);
+  font-weight: 400;
+  margin-top: 8px;
 }
