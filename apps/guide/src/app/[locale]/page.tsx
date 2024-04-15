@@ -48,6 +48,8 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
       ? 'https://apps.apple.com/kr/app/id6467635137'
       : 'https://apps.apple.com/app/id6467635137';
 
+  const icoIcon = 'https://guide.dalgu.app/ico/scheduler.ico';
+
   return {
     title: smallAppGuide,
     description: desc,
@@ -73,6 +75,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
             'reminder',
             'reminders',
           ],
+    icons: icoIcon,
 
     // S of Basic Fields
     generator: myName,
@@ -88,7 +91,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
     },
     // E of Basic Fields
 
-    // metadataBase: new URL(`https://guide.dalgu.app/${locale}`),
+    metadataBase: new URL('https://guide.dalgu.app/'),
 
     // alternates
     alternates: {
