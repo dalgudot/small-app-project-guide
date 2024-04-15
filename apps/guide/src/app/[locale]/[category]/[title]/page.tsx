@@ -33,7 +33,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   const date = meta.date;
   const myName = locale === 'ko' ? '김경환' : 'KyungHwan Kim';
 
-  const thumbnail = `/images/${locale}/${category}/${title}/thumbnail.jpg`;
+  const thumbnail = `https://guide.dalgu.app/images/${locale}/${category}/${title}/thumbnail.jpg`;
 
   const url = `https://guide.dalgu.app/${locale}/${category}/${title}`;
 
