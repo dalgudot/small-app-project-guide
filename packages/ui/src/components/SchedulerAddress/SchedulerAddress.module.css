@@ -1,0 +1,30 @@
+.address a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  transform: translateX(-12px);
+  border-radius: 12px;
+}
+
+@media (hover: hover) {
+  .address a:hover {
+    background-color: var(--g8);
+  }
+}
+
+.address a:active {
+  background-color: var(--g7);
+}
+
+.address svg {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+}
+
+.address p {
+  font-size: var(--t16);
+  color: var(--g1);
+  font-weight: 500;
+}

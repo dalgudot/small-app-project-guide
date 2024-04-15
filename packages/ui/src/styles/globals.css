@@ -43,3 +43,7 @@ ol,
 span {
   color: var(--g1);
 }
+
+address {
+  font-style: normal;
+}

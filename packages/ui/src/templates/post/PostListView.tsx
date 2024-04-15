@@ -47,11 +47,13 @@ function PostListItemView({
 
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString
     const localizedDate: string = new Date(date).toLocaleDateString();
+    const dateToDisplay =
+      locale === 'ko' ? date.replaceAll('-', '. ') + '.' : localizedDate;
 
     return (
       <li key={pathName}>
         <Link href={`/${locale}/${category}/${pathName}`} className={s.list__a}>
-          <time dateTime={date}>{localizedDate}</time>
+          <time dateTime={date}>{dateToDisplay}</time>
           <h1>{title}</h1>
           <p>{description}</p>
         </Link>
