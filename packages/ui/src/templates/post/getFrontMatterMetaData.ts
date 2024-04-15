@@ -5,6 +5,7 @@ import matter from 'gray-matter';
 interface FrontMatterMetaData {
   title: string;
   description: string;
+  date: string;
 }
 
 export function getFrontMatterMetaData(
@@ -23,5 +24,6 @@ export function getFrontMatterMetaData(
   return {
     title: meta.title,
     description: meta.description,
+    date: meta.date,
   };
 }

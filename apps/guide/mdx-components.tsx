@@ -1,4 +1,4 @@
-import { Code, H1, H2, H3, P } from '@repo/ui/mdx';
+import { BlockQuote, Code, H1, H2, H3, HR, P } from '@repo/ui/mdx';
 import type { MDXComponents } from 'mdx/types';
 import Image, { ImageProps } from 'next/image';
 
@@ -8,7 +8,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h2: ({ children }) => <H2>{children}</H2>,
     h3: ({ children }) => <H3>{children}</H3>,
     p: ({ children }) => <P>{children}</P>,
+    blockquote: ({ children }) => <BlockQuote>{children}</BlockQuote>,
     code: ({ children }) => <Code>{children}</Code>,
+    hr: ({ children }) => <HR>{children}</HR>,
     // img: (props) => (
     //   <Image
     //     sizes='100vw'

@@ -1,31 +1,21 @@
-import { getFrontMatterMetaData } from '@repo/ui/templates/post';
+import { Locale } from '@/i18n';
 import { ReactNode } from 'react';
+import s from './layout.module.css';
 
-// 포스트별로 동적으로 MetaData 생성
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: string; category: string; title: string };
-}) {
-  const { locale, category, title } = params;
-  const meta = getFrontMatterMetaData(locale, category, title);
-
-  return {
-    title: meta.title,
-    description: meta.description,
-  };
+interface Params {
+  locale: Locale;
 }
 
 export default function GuidePostLayout({
   children,
-  params: { locale },
+  params,
 }: Readonly<{
   children: ReactNode;
-  params: { locale: string };
+  params: Params;
 }>) {
   return (
-    <main>
-      <article>{children}</article>
+    <main className={s.main}>
+      <article className={s.article}>{children}</article>
     </main>
   );
 }

@@ -11,8 +11,11 @@ body {
 }
 
 a {
-  color: inherit;
+  /* color: inherit; */
   text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-tap-highlight-color: transparent;
 }
 
 ul,
@@ -21,13 +24,22 @@ ol {
   list-style: none;
 }
 
-/* Theme */
-/* :root {
-  --background: white;
-  --foreground: black;
+input:focus {
+  outline: none;
 }
 
-[data-theme='dark'] {
-  --background: black;
-  --foreground: white;
-} */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button,
+ul,
+li,
+ol,
+span {
+  color: var(--g1);
+}
