@@ -9,6 +9,29 @@ interface Params {
   locale: Locale;
 }
 
+export default function GuideListPage({
+  params,
+}: Readonly<{
+  params: Params;
+}>): JSX.Element {
+  const locale = params.locale;
+
+  // [next-intl temp api for SSG] unstable_setRequestLocale()은 임시 해결책으로 모든 Layout과 페이지에서 쓰여야 함.
+  // https://next-intl-docs.vercel.app/docs/getting-started/app-router#static-rendering
+  unstable_setRequestLocale(locale);
+  const t = useTranslations('Home');
+
+  return (
+    <main className={s.main}>
+      <PostListView title={t('Small App Guide')} locale={locale} />
+    </main>
+  );
+}
+
+export function generateStaticParams(): Params[] {
+  return locales.map((locale) => ({ locale }));
+}
+
 // https://nextjs.org/docs/app/api-reference/functions/generate-metadata
 export function generateMetadata({ params }: { params: Params }): Metadata {
   const locale = params.locale;
@@ -44,6 +67,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
             '어플',
             '리마인더',
             '미리 알림',
+            '미리알림',
           ]
         : [
             'Small App Project',
@@ -128,28 +152,4 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
       ],
     },
   };
-}
-
-export function generateStaticParams(): Params[] {
-  return locales.map((locale) => ({ locale }));
-}
-
-export default function GuideListPage({
-  params,
-}: Readonly<{
-  params: Params;
-}>): JSX.Element {
-  const locale = params.locale;
-
-  // [next-intl temp api for SSG] unstable_setRequestLocale()은 임시 해결책으로 모든 Layout과 페이지에서 쓰여야 함.
-  // https://next-intl-docs.vercel.app/docs/getting-started/app-router#static-rendering
-  unstable_setRequestLocale(locale);
-  const t = useTranslations('Home');
-
-  return (
-    <main className={s.main}>
-      {/* <h1>{t('Small App Project')}</h1> */}
-      <PostListView locale={locale} />
-    </main>
-  );
 }

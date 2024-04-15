@@ -1,5 +1,6 @@
 import '@repo/ui/text-styles';
 import '@repo/ui/globals';
+import '@repo/ui/colors';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
 import Link from 'next/link';
 import ThemeSelector from '@/components/ThemeSelector';
