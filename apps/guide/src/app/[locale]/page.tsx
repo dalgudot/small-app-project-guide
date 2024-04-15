@@ -48,11 +48,6 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
       ? 'https://apps.apple.com/kr/app/id6467635137'
       : 'https://apps.apple.com/app/id6467635137';
 
-  const reminderLink =
-    locale === 'ko'
-      ? 'https://apps.apple.com/kr/app/id6444939279'
-      : 'https://apps.apple.com/app/id6444939279';
-
   return {
     title: smallAppGuide,
     description: desc,
@@ -93,7 +88,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
     },
     // E of Basic Fields
 
-    metadataBase: new URL(`https://guide.dalgu.app/${locale}`),
+    // metadataBase: new URL(`https://guide.dalgu.app/${locale}`),
 
     // alternates
     alternates: {
@@ -109,20 +104,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
       title: smallAppGuide,
       description: desc,
       url: url,
-      siteName: smallAppGuide,
-      images: [
-        {
-          url: '', // Must be an absolute URL
-          width: 800,
-          height: 600,
-        },
-        {
-          url: '', // Must be an absolute URL
-          width: 1800,
-          height: 1600,
-          alt: 'My custom alt',
-        },
-      ],
+      images: '',
       locale: locale,
       type: 'website',
     },
@@ -139,15 +121,9 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
 
     appLinks: {
       ios: [
-        // 스케줄러
         {
           url: schedulerLink,
           app_store_id: '6467635137',
-        },
-        // 리마인더
-        {
-          url: reminderLink,
-          app_store_id: '6444939279',
         },
       ],
     },

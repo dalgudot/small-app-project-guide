@@ -69,7 +69,3 @@ export function HR({ children }: { children: React.ReactNode }): JSX.Element {
     </hr>
   );
 }
-
-export function BR({ children }: { children: React.ReactNode }): JSX.Element {
-  return <br style={{ margin: '48px 0' }}>{children}</br>;
-}

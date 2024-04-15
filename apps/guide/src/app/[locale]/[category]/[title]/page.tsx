@@ -30,19 +30,41 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   const meta = getFrontMatterMetaData(locale, category, title);
 
   const metaTitle = meta.title;
-  const description = meta.description;
+  const desc = meta.description;
+  const date = meta.date;
   const myName = locale === 'ko' ? '김경환' : 'KyungHwan Kim';
+
+  const thumbnail = `/images/${locale}/${category}/${title}/thumbnail.jpg`;
+
+  const url = `https://guide.dalgu.app/${locale}/${category}/${title}`;
+
+  const schedulerLink =
+    locale === 'ko'
+      ? 'https://apps.apple.com/kr/app/id6467635137'
+      : 'https://apps.apple.com/app/id6467635137';
 
   return {
     title: metaTitle,
-    description: description,
+    description: desc,
 
     openGraph: {
       title: metaTitle,
-      description: description,
-      type: 'article',
-      publishedTime: '2023-01-01T00:00:00.000Z',
+      description: desc,
+      url: url,
+      publishedTime: date,
       authors: [myName],
+      images: thumbnail,
+      locale: locale,
+      type: 'article',
+    },
+
+    appLinks: {
+      ios: [
+        {
+          url: schedulerLink,
+          app_store_id: '6467635137',
+        },
+      ],
     },
   };
 }

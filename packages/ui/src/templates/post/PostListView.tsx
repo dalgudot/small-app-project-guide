@@ -51,8 +51,8 @@ function PostListItemView({
     return (
       <li key={pathName}>
         <Link href={`/${locale}/${category}/${pathName}`} className={s.list__a}>
-          <h1>{title}</h1>
           <time dateTime={date}>{localizedDate}</time>
+          <h1>{title}</h1>
           <p>{description}</p>
         </Link>
       </li>
