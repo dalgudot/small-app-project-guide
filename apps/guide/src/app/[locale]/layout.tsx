@@ -15,6 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={locale}>
+      <head>
+        <meta
+          name='naver-site-verification'
+          content='5155226e8cbb4329fa802d28753a2934765c0f1b'
+        />
+      </head>
       <body>
         <NextThemeProvider>
           <nav>
