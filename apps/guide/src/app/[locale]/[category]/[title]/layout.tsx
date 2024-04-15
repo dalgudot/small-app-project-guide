@@ -1,16 +1,21 @@
 import { Locale } from '@/i18n';
 import { ReactNode } from 'react';
+import s from './layout.module.css';
+
+interface Params {
+  locale: Locale;
+}
 
 export default function GuidePostLayout({
   children,
-  params: { locale },
+  params,
 }: Readonly<{
   children: ReactNode;
-  params: { locale: Locale };
+  params: Params;
 }>) {
   return (
-    <main>
-      <article>{children}</article>
+    <main className={s.main}>
+      <article className={s.article}>{children}</article>
     </main>
   );
 }

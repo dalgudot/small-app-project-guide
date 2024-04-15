@@ -11,7 +11,41 @@ export function H3({ children }: { children: React.ReactNode }): JSX.Element {
 }
 
 export function P({ children }: { children: React.ReactNode }): JSX.Element {
-  return <p style={{ fontSize: '17px', fontWeight: '400' }}>{children}</p>;
+  return (
+    <p
+      style={{
+        fontSize: '19px',
+        fontWeight: '400',
+        color: 'var(--g1)',
+        lineHeight: '1.6',
+      }}
+    >
+      {children}
+    </p>
+  );
+}
+
+export function BlockQuote({
+  children,
+}: {
+  children: React.ReactNode;
+}): JSX.Element {
+  return (
+    <blockquote
+      style={{
+        fontSize: '19px',
+        fontWeight: '400',
+        color: 'var(--g1)',
+        background: 'var(--g8)',
+        borderLeft: '8px solid var(--g7)',
+        padding: '8px 12px',
+        borderRadius: '8px',
+        margin: '8px 0',
+      }}
+    >
+      {children}
+    </blockquote>
+  );
 }
 
 export function Code({ children }: { children: React.ReactNode }): JSX.Element {
@@ -26,4 +60,16 @@ export function Code({ children }: { children: React.ReactNode }): JSX.Element {
       {children}
     </code>
   );
+}
+
+export function HR({ children }: { children: React.ReactNode }): JSX.Element {
+  return (
+    <hr style={{ border: '1px solid var(--g7)', margin: '32px 0' }}>
+      {children}
+    </hr>
+  );
+}
+
+export function BR({ children }: { children: React.ReactNode }): JSX.Element {
+  return <br style={{ margin: '48px 0' }}>{children}</br>;
 }

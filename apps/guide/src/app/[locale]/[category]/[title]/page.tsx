@@ -10,6 +10,20 @@ interface Params {
   title: string;
 }
 
+// Dynamic Routes
+// https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes
+export default function PostPage({ params }: { params: Params }): JSX.Element {
+  const { locale, category, title } = params;
+
+  // MDX 활용 위한 Dynamic import
+  // https://nextjs.org/docs/app/building-your-application/optimizing/lazy-loading
+  const MDXContent = dynamic(
+    () => import(`../../../../posts/${locale}/${category}/${title}.mdx`)
+  );
+
+  return <MDXContent />;
+}
+
 // 포스트별로 동적으로 MetaData 생성
 export function generateMetadata({ params }: { params: Params }): Metadata {
   const { locale, category, title } = params;
@@ -59,18 +73,4 @@ export function generateStaticParams(): Params[] {
   });
 
   return paramsArr;
-}
-
-// Dynamic Routes
-// https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes
-export default function PostPage({ params }: { params: Params }): JSX.Element {
-  const { locale, category, title } = params;
-
-  // MDX 활용 위한 Dynamic import
-  // https://nextjs.org/docs/app/building-your-application/optimizing/lazy-loading
-  const MDXContent = dynamic(
-    () => import(`../../../../posts/${locale}/${category}/${title}.mdx`)
-  );
-
-  return <MDXContent />;
 }
