@@ -1,6 +1,6 @@
 import s from './SchedulerAddress.module.css';
-import { NewTab } from '../NewTab/NewTab';
-import { SchedulerLogo } from '../../Foundations/Logo/SchedulerLogo';
+import { NewTab } from '../../NewTab/NewTab';
+import { SchedulerLogoSVG } from '../../../Foundations/Logo/SchedulerLogoSVG';
 
 export function SchedulerAddress({ locale }: { locale: 'ko' | 'en' }) {
   const name =
@@ -16,7 +16,7 @@ export function SchedulerAddress({ locale }: { locale: 'ko' | 'en' }) {
   return (
     <address className={s.address}>
       <NewTab href={href}>
-        <SchedulerLogo />
+        <SchedulerLogoSVG />
         <p>{name}</p>
       </NewTab>
     </address>
