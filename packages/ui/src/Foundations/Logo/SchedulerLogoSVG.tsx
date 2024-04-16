@@ -1,4 +1,4 @@
-export function SchedulerLogo() {
+export function SchedulerLogoSVG() {
   return (
     <svg
       width='72'
