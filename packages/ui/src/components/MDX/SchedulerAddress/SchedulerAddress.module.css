@@ -17,10 +17,16 @@
   background-color: var(--g7);
 }
 
-.address svg {
+/* SVG 중앙 맞추기 위한 부모 CSS */
+.address span:nth-child(1) {
+  display: flex;
+  align-items: center;
+}
+
+.address span:nth-child(1) svg {
   width: 32px;
   height: 32px;
-  /* border-radius: 7px; */
+  border-radius: 8px;
 }
 
 .address p {

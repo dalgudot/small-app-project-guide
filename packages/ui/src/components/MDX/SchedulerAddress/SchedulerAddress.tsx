@@ -16,7 +16,10 @@ export function SchedulerAddress({ locale }: { locale: 'ko' | 'en' }) {
   return (
     <address className={s.address}>
       <NewTab href={href}>
-        <SchedulerLogoSVG />
+        {/* SVG 크기 조정 위해 span 꼭 필요 */}
+        <span>
+          <SchedulerLogoSVG />
+        </span>
         <p>{name}</p>
       </NewTab>
     </address>
