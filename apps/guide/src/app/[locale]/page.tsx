@@ -48,7 +48,7 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
       ? 'https://apps.apple.com/kr/app/id6467635137'
       : 'https://apps.apple.com/app/id6467635137';
 
-  const icoIcon = 'https://guide.dalgu.app/ico/scheduler.ico';
+  const icoIcon = 'https://guide.dalgu.app/ico/yoonseul.ico';
 
   return {
     title: smallAppGuide,
