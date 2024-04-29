@@ -1,7 +1,7 @@
 .main {
   display: flex;
   justify-content: center;
-  padding: 96px 0 480px;
+  padding: 96px 0 720px;
   min-height: 100dvh;
   background-color: var(--bw);
 }

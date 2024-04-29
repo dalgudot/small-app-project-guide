@@ -25,6 +25,21 @@ export function P({ children }: { children: React.ReactNode }): JSX.Element {
   );
 }
 
+export function Li({ children }: { children: React.ReactNode }): JSX.Element {
+  return (
+    <li
+      style={{
+        fontSize: '19px',
+        fontWeight: '400',
+        color: 'var(--g1)',
+        lineHeight: '1.6',
+      }}
+    >
+      {children}
+    </li>
+  );
+}
+
 export function BlockQuote({
   children,
 }: {
@@ -64,7 +79,7 @@ export function Code({ children }: { children: React.ReactNode }): JSX.Element {
 
 export function HR({ children }: { children: React.ReactNode }): JSX.Element {
   return (
-    <hr style={{ border: '1px solid var(--g7)', margin: '24px 0' }}>
+    <hr style={{ border: '1px solid var(--g7)', margin: '32px 0' }}>
       {children}
     </hr>
   );
