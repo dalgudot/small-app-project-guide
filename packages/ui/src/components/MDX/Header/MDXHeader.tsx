@@ -7,8 +7,8 @@ interface Props {
 
 export function MDXHeader({ children, locale }: Props) {
   return (
-    <header>
-      {children}
+    <header style={{ marginBottom: '72px' }}>
+      <h1 style={{ fontSize: '34px', fontWeight: '700' }}>{children} </h1>
       <SchedulerAddress locale={locale} />
     </header>
   );

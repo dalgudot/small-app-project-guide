@@ -2,7 +2,7 @@ import fs from 'fs';
 import matter from 'gray-matter';
 
 // https://nextjs.org/docs/app/building-your-application/configuring/mdx#frontmatter
-interface FrontMatterMetaData {
+export interface FrontMatterMetaData {
   title: string;
   description: string;
   date: string;

@@ -1,8 +1,12 @@
 import { Locale, locales } from '@/i18n';
 import dynamic from 'next/dynamic';
 import fs from 'fs';
-import { getFrontMatterMetaData } from '@repo/ui/templates/post';
+import {
+  FrontMatterMetaData,
+  getFrontMatterMetaData,
+} from '@repo/ui/templates/post';
 import { Metadata } from 'next';
+import { MDXDesc, MDXHeader } from '@repo/ui/components';
 interface Params {
   locale: Locale;
   category: string;
@@ -20,13 +24,29 @@ export default function PostPage({ params }: { params: Params }): JSX.Element {
     () => import(`../../../../posts/${locale}/${category}/${title}.mdx`)
   );
 
-  return <MDXContent />;
+  const meta: FrontMatterMetaData = getFrontMatterMetaData(
+    locale,
+    category,
+    title
+  );
+
+  return (
+    <>
+      <MDXHeader locale={locale}>{meta.title}</MDXHeader>
+      <MDXDesc>{meta.description}</MDXDesc>
+      <MDXContent />
+    </>
+  );
 }
 
 // 포스트별로 동적으로 MetaData 생성
 export function generateMetadata({ params }: { params: Params }): Metadata {
   const { locale, category, title } = params;
-  const meta = getFrontMatterMetaData(locale, category, title);
+  const meta: FrontMatterMetaData = getFrontMatterMetaData(
+    locale,
+    category,
+    title
+  );
 
   const metaTitle = meta.title;
   const desc = meta.description;
