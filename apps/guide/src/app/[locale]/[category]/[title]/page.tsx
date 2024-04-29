@@ -6,7 +6,7 @@ import {
   getFrontMatterMetaData,
 } from '@repo/ui/templates/post';
 import { Metadata } from 'next';
-import { MDXDesc, MDXHeader } from '@repo/ui/components';
+import { MDXAppLink, MDXDesc, MDXHeader } from '@repo/ui/components';
 interface Params {
   locale: Locale;
   category: string;
@@ -35,6 +35,7 @@ export default function PostPage({ params }: { params: Params }): JSX.Element {
       <MDXHeader locale={locale}>{meta.title}</MDXHeader>
       <MDXDesc>{meta.description}</MDXDesc>
       <MDXContent />
+      <MDXAppLink locale={locale} />
     </>
   );
 }

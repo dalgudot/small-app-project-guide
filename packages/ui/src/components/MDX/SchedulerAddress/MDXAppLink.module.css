@@ -1,0 +1,95 @@
+.a {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  background: var(--g8);
+  padding: 32px 28px;
+  border: 1px solid var(--g7);
+  border-radius: 12px;
+  margin: 8px 0;
+}
+
+@media (hover: hover) {
+  .a:hover {
+    background-color: var(--g7);
+  }
+}
+
+.a:active {
+  background-color: var(--g8);
+}
+
+.a span {
+  display: flex;
+  align-items: center;
+}
+
+.a span svg {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  color: var(--g1);
+}
+
+.right__side {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.right__side__info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.right__side__info h4 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--g1);
+}
+
+.right__side__info p {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--g1);
+}
+
+.right__side span svg {
+  display: flex;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  color: var(--g1);
+}
+
+@media screen and (max-width: 768px) {
+  .a {
+    padding: 20px 16px;
+  }
+
+  .a span svg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .right__side__info {
+    gap: 4px;
+  }
+
+  .right__side__info h4 {
+    font-size: 19px;
+  }
+
+  .right__side__info p {
+    font-size: 14px;
+  }
+
+  .right__side span svg {
+    width: 28px;
+    height: 28px;
+  }
+}

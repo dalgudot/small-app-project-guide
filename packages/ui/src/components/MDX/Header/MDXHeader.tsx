@@ -1,8 +1,9 @@
+import { Locale } from '../../../typs';
 import { SchedulerAddress } from '../SchedulerAddress/SchedulerAddress';
 
 interface Props {
   children: React.ReactNode;
-  locale: 'ko' | 'en';
+  locale: Locale;
 }
 
 export function MDXHeader({ children, locale }: Props) {
