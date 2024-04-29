@@ -1,5 +1,5 @@
 import { Locale } from '../../../typs';
-import { SchedulerAddress } from '../SchedulerAddress/SchedulerAddress';
+import { SchedulerAddress } from '../AppLink/SchedulerAddress';
 
 interface Props {
   children: React.ReactNode;
