@@ -6,6 +6,7 @@
     "./components": "./src/components/index.ts",
     "./mdx": "./src/mdx.tsx",
     "./templates/post": "./src/templates/post/index.ts",
+    "./svg": "./src/foundations/svg/index.ts",
     "./text-styles": "./src/styles/text-style.css",
     "./globals": "./src/styles/globals.css",
     "./colors": "./src/styles/colors.css"

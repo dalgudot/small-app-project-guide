@@ -1,10 +1,10 @@
 import s from './SchedulerAddress.module.css';
 import s2 from './MDXAppLink.module.css';
 import { NewTab } from '../../NewTab/NewTab';
-import { SchedulerLogoSVG } from '../../../foundations/logo/SchedulerLogoSVG';
+import { SchedulerLogoSVG } from '../../../foundations/svg/SchedulerLogoSVG';
 import { Locale } from '../../../typs';
 import { AppInfo } from '../../../info/AppInfo';
-import { IconNewTap24 } from '../../../foundations/svg/icon-new-tap-24';
+import { IconNewTap24 } from '../../../foundations/svg/IconNewTap24';
 
 interface Props {
   locale: Locale;
