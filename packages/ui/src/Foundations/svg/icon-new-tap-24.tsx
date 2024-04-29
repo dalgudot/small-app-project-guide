@@ -1,4 +1,4 @@
-const IconNewTap24 = () => {
+export function IconNewTap24() {
   return (
     <>
       <svg
@@ -12,6 +12,4 @@ const IconNewTap24 = () => {
       </svg>
     </>
   );
-};
-
-export default IconNewTap24;
+}

@@ -4,7 +4,7 @@ import { NewTab } from '../../NewTab/NewTab';
 import { SchedulerLogoSVG } from '../../../foundations/logo/SchedulerLogoSVG';
 import { Locale } from '../../../typs';
 import { AppInfo } from '../../../info/AppInfo';
-import IconNewTap24 from '../../../foundations/svg/icon-new-tap-24';
+import { IconNewTap24 } from '../../../foundations/svg/icon-new-tap-24';
 
 interface Props {
   locale: Locale;
