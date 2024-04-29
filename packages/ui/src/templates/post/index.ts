@@ -1,2 +1,2 @@
 export { PostListView } from './PostListView';
-export { getFrontMatterMetaData } from './getFrontMatterMetaData';
+export * from './getFrontMatterMetaData';

@@ -1,14 +1,15 @@
+import { Locale } from '../../../typs';
 import { SchedulerAddress } from '../SchedulerAddress/SchedulerAddress';
 
 interface Props {
   children: React.ReactNode;
-  locale: 'ko' | 'en';
+  locale: Locale;
 }
 
 export function MDXHeader({ children, locale }: Props) {
   return (
-    <header>
-      {children}
+    <header style={{ marginBottom: '72px' }}>
+      <h1 style={{ fontSize: '34px', fontWeight: '700' }}>{children} </h1>
       <SchedulerAddress locale={locale} />
     </header>
   );
