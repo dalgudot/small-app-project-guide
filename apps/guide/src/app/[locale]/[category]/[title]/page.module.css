@@ -1,0 +1,18 @@
+.go__to__list {
+  margin-top: 72px;
+  font-size: 19px;
+  text-decoration: underline;
+  padding: 12px;
+  transform: translateX(-12px);
+  border-radius: 12px;
+}
+
+@media (hover: hover) {
+  .go__to__list:hover {
+    background-color: var(--g8);
+  }
+}
+
+.go__to__list:active {
+  background-color: var(--g7);
+}
