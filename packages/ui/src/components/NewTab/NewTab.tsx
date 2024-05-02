@@ -9,7 +9,7 @@ export function NewTabSchedulerApp({ locale }: { locale: 'ko' | 'en' }) {
       : 'https://apps.apple.com/app/id6467635137';
 
   return (
-    <NewTab href={href} className={s.a}>
+    <NewTab href={href} className={s.a__blue}>
       {name}
     </NewTab>
   );
@@ -25,7 +25,7 @@ export function NewTab({
   className?: string;
 }) {
   return (
-    <a href={href} target='_blank' className={className && className}>
+    <a href={href} target='_blank' className={className ? className : s.a}>
       {children}
     </a>
   );

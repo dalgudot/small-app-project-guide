@@ -1,4 +1,8 @@
-.a {
+.a__blue {
   color: #4dabf7;
+  text-decoration: underline;
+}
+
+.a {
   text-decoration: underline;
 }

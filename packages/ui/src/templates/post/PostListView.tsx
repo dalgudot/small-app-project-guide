@@ -15,7 +15,12 @@ export function PostListView({ title, locale }: Props) {
       <h2>{title}</h2>
       {PostListDatas.map((postByCategory) => {
         const category: string = postByCategory.category;
-        const postListItems: PostListItem[] = postByCategory.postListItems;
+
+        // 최신순 정렬
+        // https://lagom777.tistory.com/26
+        const postListItems: PostListItem[] = postByCategory.postListItems.sort(
+          (a, b) => +new Date(b.date) - +new Date(a.date)
+        );
 
         // Category 폴더만 만들어 놓은 경우 방지
         if (postListItems.length !== 0) {
