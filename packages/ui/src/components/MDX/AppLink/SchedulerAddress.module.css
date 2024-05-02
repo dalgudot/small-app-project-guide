@@ -5,6 +5,7 @@
   padding: 12px;
   transform: translateX(-12px);
   border-radius: 12px;
+  text-decoration: none;
 }
 
 @media (hover: hover) {

@@ -3,7 +3,7 @@ export function H1({ children }: { children: React.ReactNode }): JSX.Element {
 }
 
 export function H2({ children }: { children: React.ReactNode }): JSX.Element {
-  return <h2 style={{ fontSize: '22px', fontWeight: '600' }}>{children}</h2>;
+  return <h2 style={{ fontSize: '29px', fontWeight: '600' }}>{children}</h2>;
 }
 
 export function H3({ children }: { children: React.ReactNode }): JSX.Element {
