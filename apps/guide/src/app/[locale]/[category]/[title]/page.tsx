@@ -39,7 +39,8 @@ export default function PostPage({ params }: { params: Params }): JSX.Element {
       <MDXDesc>{meta.description}</MDXDesc>
       <MDXContent />
       <MDXAppLink locale={locale} />
-      <GoToList locale={locale} className={s.go__to__list} />
+      {/* 🔥 추후 언어별로 '미디엄' '티스토리' 링크(더 많은 가이드 보기)로 변경하기! */}
+      {/* <GoToList locale={locale} className={s.go__to__list} /> */}
     </>
   );
 }
