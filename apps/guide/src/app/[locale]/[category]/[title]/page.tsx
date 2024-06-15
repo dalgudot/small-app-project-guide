@@ -39,7 +39,7 @@ export default function PostPage({ params }: { params: Params }): JSX.Element {
       <MDXDesc>{meta.description}</MDXDesc>
       <MDXContent />
       <MDXAppLink locale={locale} />
-      <GoToList locale={locale} className={s.go__to__list} />
+      {/* <GoToList locale={locale} className={s.go__to__list} /> */}
     </>
   );
 }
