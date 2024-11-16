@@ -24,7 +24,7 @@
   align-items: center;
 }
 
-.address span:nth-child(1) svg {
+.address span:nth-child(1) img {
   width: 32px;
   height: 32px;
   border-radius: 8px;
