@@ -1,4 +1,4 @@
-import { SchedulerLogoSVG } from '../../../foundations/svg';
+import { SchedulerLogoImage } from '../../../foundations/svg';
 import { IconNewTap24 } from '../../../foundations/svg/IconNewTap24';
 import { AppInfo } from '../../../info/AppInfo';
 import { Locale } from '../../../typs';
@@ -16,7 +16,7 @@ export function MDXAppLink({ locale }: Props) {
     <footer style={{ marginTop: '72px' }}>
       <NewTab href={appInfo.getSchedulerAppLink(locale)} className={s.a}>
         <span>
-          <SchedulerLogoSVG />
+          <SchedulerLogoImage size={64} />
         </span>
         <div className={s.right__side}>
           <div className={s.right__side__info}>

@@ -1,6 +1,6 @@
 import s from './SchedulerAddress.module.css';
 import { NewTab } from '../../NewTab/NewTab';
-import { SchedulerLogoSVG } from '../../../foundations/svg/SchedulerLogoSVG';
+import { SchedulerLogoImage } from '../../../foundations/svg/SchedulerLogoImage';
 import { Locale } from '../../../typs';
 import { AppInfo } from '../../../info/AppInfo';
 
@@ -16,7 +16,7 @@ export function SchedulerAddress({ locale }: Props) {
       <NewTab href={appInfo.getSchedulerAppLink(locale)}>
         {/* SVG 크기 조정 위해 span 꼭 필요 */}
         <span>
-          <SchedulerLogoSVG />
+          <SchedulerLogoImage size={32} />
         </span>
         <p>{`${appInfo.getSchedulerAppName(locale)} · ${appInfo.getSchedulerMessage(locale)}`}</p>
       </NewTab>
