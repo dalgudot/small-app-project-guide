@@ -22,6 +22,29 @@ const nextConfig = {
 
   // Configure `pageExtensions`` to include MDX files
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+
+  async redirects() {
+    return [
+      {
+        source: '/ko/calendar/shared-calendar',
+        destination:
+          'https://small.dalgu.app/ko/scheduler/guide/shared-calendar',
+        permanent: true,
+      },
+      {
+        source: '/en/calendar/shared-calendar',
+        destination:
+          'https://small.dalgu.app/en/scheduler/guide/shared-calendar',
+        permanent: true,
+      },
+      {
+        source: '/ko/calendar/link-naver-calendar',
+        destination:
+          'https://small.dalgu.app/ko/scheduler/guide/naver-calendar-sync-iphone',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 // Merge MDX config with Next.js config
